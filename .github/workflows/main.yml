@@ -1,19 +1,22 @@
 name: Checkmarx AST Scan
-on: [pull_request]
+on: [push , pull_request]
+
+
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Checkmarx AST CLI Action
-        uses: checkmarxDev/ast-github-action@master #Github Action version
-        with:
-          project_name: small-project
-          base_uri: https://eu.ast.checkmarx.net/
-          branch: ${{ github.head_ref }}
-          cx_tenant: cx_ast_pm_yoav_ast
-          cx_client_id: GitHub Actions
-          cx_client_secret: 8f2c1e10-427c-460e-a800-208a0a5e36fb
-          additional_params: --threshold "sast-high=4;sca-high=1;kics-high=1"
+   runs-on: ubuntu-latest
+   steps:
+     - name: Checkout
+       uses: actions/checkout@v2
+     - name: Checkmarx AST CLI Action
+       uses: Checkmarx/ast-github-action@v0.29
+       with:
+            project_name: small-project
+            base_uri: https://eu.ast.checkmarx.net/
+            branch: ${{ github.head_ref }}
+            cx_tenant: cx_ast_pm_yoav_ast
+            cx_client_id: ${{ secrets.CX_CLIENT_ID }}
+            cx_client_secret: ${{ secrets.CX_CLIENT_SECRET }}
+            additional_params: --threshold "sast-high=4;sca-high=1;kics-high=1"
+
