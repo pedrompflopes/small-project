@@ -14,7 +14,6 @@ jobs:
        with:
             project_name: small-project
             base_uri: https://eu.ast.checkmarx.net/
-            branch: ${{ github.head_ref }}
             cx_tenant: cx_ast_pm_yoav_ast
             cx_client_id: ${{ secrets.CX_CLIENT_ID }}
             cx_client_secret: ${{ secrets.CX_CLIENT_SECRET }}
