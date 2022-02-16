@@ -17,7 +17,7 @@ jobs:
             cx_tenant: cx_ast_pm_yoav_ast
             cx_client_id: ${{ secrets.CLIENT_ID }}
             cx_client_secret: ${{ secrets.CLIENT_SECRET }}
-            additional_params: --debug  --sast-preset-name "failed preset"
+            additional_params:   --sast-preset-name "failed preset"
 
 
 
