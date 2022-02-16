@@ -10,7 +10,7 @@ jobs:
      - name: Checkout
        uses: actions/checkout@v2
      - name: Checkmarx AST CLI Action
-       uses: Checkmarx/ast-github-action@v0.29
+       uses: Checkmarx/ast-github-action@2.0.2
        with:
             project_name: small-project
             base_uri: https://eu.ast.checkmarx.net/
