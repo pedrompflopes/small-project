@@ -29,18 +29,16 @@ jobs:
   uses: Checkmarx/ast-github-action@2.0.2
   with:
     # Provide the AST portal URL
-    base_uri: 
+    base_uri: https://eu.ast.checkmarx.net/
     # Provide the Tenant for AST portal URL
-    cx_tenant: 
+    cx_tenant: cx_ast_pm_yoav_ast
     # Client ID for AST portal authentication
-    cx_client_id: 
+    cx_client_id: GitHub Actions
     # Secret key for AST portal authentication
-    cx_client_secret: 
+    cx_client_secret: 8f2c1e10-427c-460e-a800-208a0a5e36fb
     # Select a Checkmarx Project Name
-    project_name: # optional, default is ${{ github.repository }}
-    # Branch name
-    branch: # optional, default is ${{ github.ref }}
-    # GitHub API Token
+    project_name: small-project
+    branch: main
     github_token: # optional, default is ${{ github.token }}
     # Additional parameters for AST scan
     additional_params: # optional, default is 
